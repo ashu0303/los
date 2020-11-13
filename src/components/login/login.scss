@@ -1,0 +1,41 @@
+@import "../../assets/scss/variables";
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-content: center;
+    // align-items: center;
+    // margin-top: 220px;
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.log-size {
+    width: 220px;
+    height: 43px;
+}
+
+.login-text {
+    margin-left: 11%;
+    margin-top: 50%;
+    color: $secondary-text;
+}
+
+// .TextField {
+//     font-size: 5px;
+//     width: 20px;
+//     height: 100px;
+// }
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.width {
+    min-width: 240px;
+}
+.form-fields {
+    margin-top: 7%;
+}

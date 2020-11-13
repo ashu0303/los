@@ -1,0 +1,13 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.background-imge {
+    flex-basis: 60%;
+    width: 60%;
+    height: 100vh;
+}
+.login-component {
+    flex-basis: 30%;
+}
