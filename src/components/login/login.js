@@ -9,7 +9,7 @@ import FormLabel from "@material-ui/core/FormLabel";
 import davintaLog from "../../assets/images/davinta-logo-white-bg.png";
 import "./login.scss";
 
-export default function login() {
+export default function login(props) {
   return (
     <div class="login-container">
       <img class="log-size" src={davintaLog} alt="Davinta logo"></img>
@@ -40,8 +40,13 @@ export default function login() {
                 labelPlacement="end"
               />
             </div>
-            <Button fullWidth="true" variant="contained" color="primary">
-              Primary
+            <Button
+              onClick={props.loginCall}
+              fullWidth="true"
+              variant="contained"
+              color="primary"
+            >
+              Login
             </Button>
           </div>
           <div>

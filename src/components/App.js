@@ -8,20 +8,8 @@ const loading = () => (
 );
 
 // Pages
+const Layout = React.lazy(() => import("../containers/Layout/Layout"));
 const Login = React.lazy(() => import("../containers/login/login"));
-/*const Register = React.lazy(() => import('./views/Pages/Register'));
-const Page404 = React.lazy(() => import('./views/Pages/Page404'));
-const Page500 = React.lazy(() => import('./views/Pages/Page500'));*/
-// const Forgot = React.lazy(() => import("./views/Pages/Forgot-Password/forgot"));
-// const OtpScreen = React.lazy(() =>
-//   import("./views/Pages/Forgot-Password/otpScreen")
-// );
-// const ResetPassword = React.lazy(() =>
-//   import("./views/Pages/Forgot-Password/resetPasword")
-// );
-// const Success = React.lazy(() =>
-//   import("./views/Pages/Forgot-Password/confirmPassword")
-// );
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -35,7 +23,13 @@ function App() {
                 name="Login Page"
                 render={(props) => <Login {...props} />}
               />
-              <Redirect from="/" to="/login" />
+              <Redirect exact from="/" to="/login" />
+              <Route
+                exact
+                path="/home/msme"
+                // name="Home"
+                render={(props) => <DefaultLayout {...props} />}
+              />
               {/* <Route exact path="/register" name="Register Page" render={props => <Register {...props}/>} />*/}
               {/*<Route exact path="/404" name="Page 404" render={props => <Page404 {...props}/>} />*/}
               {/*<Route exact path="/500" name="Page 500" render={props => <Page500 {...props}/>} />*/}
@@ -46,29 +40,16 @@ function App() {
               render={(props) => <Forgot {...props} />}
             />
             <Route
-              exact
-              path="/otp-screen/:userName"
-              name="Otp"
-              render={(props) => <OtpScreen {...props} />}
-            />
-            <Route
-              exact
-              path="/resetPassword/:userName"
-              name="Reset Password"
-              render={(props) => <ResetPassword {...props} />}
-            />
-            <Route
-              exact
-              path="/success"
-              name="passwordSuccess"
-              render={(props) => <Success {...props} />}
-            />
-            <Route
               path="/"
               name="Home"
               render={(props) => <DefaultLayout {...props} />}
             /> */}
-              {/* <PrivateRoute exact path="/dashboard" component={Dashboard} isAuthenticated={false}/> */}
+              {/* <Route
+                exact
+                path="/"
+                component={Dashboard}
+                isAuthenticated={false}
+              /> */}
             </Switch>
           </React.Suspense>
         </HashRouter>
